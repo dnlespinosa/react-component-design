@@ -1,0 +1,23 @@
+Goals 
+    Learn tiips for deciding on components and state 
+    Practice designing react app
+
+Designing Components and State 
+    Here are some ideas 
+    Generally components should be small and DO ONE THING
+        this makes them more resuable, easier to debug, etc 
+
+Dont Store Derived Info 
+    If one thing can be calculated from another, don't store both
+        taskList() {
+            const [todos, setTodos] = useState(['wash car', 'wash cat'])
+            const [numTodos, setNumTodos] = useState(2);
+
+            return (
+                <div>
+                    You have {numTodos} task...
+                </div>
+            )
+        }
+    In the above example, we don't need the todos and the numTodos, we can already figure out the numTodos from todos.length
+    
